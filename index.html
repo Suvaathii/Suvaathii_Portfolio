@@ -13,26 +13,54 @@
       font-family: 'Inter', sans-serif;
       background: #05070b;
       color: #e5e7eb;
+      line-height: 1.7;
+      font-size: 16px;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
-      padding: 20px 50px;
+      padding: 16px 40px;
       background: #0a0d14;
       position: sticky;
       top: 0;
-      z-index: 10;
+      border-bottom: 1px solid #111827;
     }
 
-    nav a { color: #9ca3af; margin-left: 20px; text-decoration: none; }
+    nav a {
+      color: #9ca3af;
+      margin-left: 20px;
+      text-decoration: none;
+      transition: 0.2s;
+    }
 
-    section { padding: 80px 60px; max-width: 1100px; margin: auto; }
+    nav a:hover {
+      color: white;
+    }
 
-    h1 { font-size: 56px; }
-    h2 { font-size: 34px; margin-bottom: 25px; }
+    section {
+      padding: 55px 30px;
+      max-width: 900px;
+      margin: auto;
+      border-bottom: 1px solid #111827;
+    }
 
-    .hero { text-align: center; padding: 120px 20px; }
+    h1 {
+      font-size: 44px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 90px 20px 70px;
+    }
 
     .highlight { color: #22c55e; }
 
@@ -41,6 +69,7 @@
       grid-template-columns: 120px 1fr;
       gap: 20px;
       margin-top: 30px;
+      align-items: center;
     }
 
     .about-box img {
@@ -54,19 +83,22 @@
       padding-left: 20px;
     }
 
-    .timeline-item { margin-bottom: 25px; }
+    .timeline-item p {
+      opacity: 0.7;
+      margin-top: 4px;
+    }
 
     .skills-bar { margin: 15px 0; }
 
     .bar {
-      height: 8px;
-      background: #111827;
-      border-radius: 6px;
+      height: 6px;
+      background: #0f172a;
+      border-radius: 4px;
       overflow: hidden;
     }
 
     .progress {
-      height: 8px;
+      height: 6px;
       background: #22c55e;
       width: 0;
       transition: width 1.5s ease;
@@ -79,23 +111,47 @@
     }
 
     .project-card {
-      background: #0a0d14;
+      background: #0b0f17;
       border: 1px solid #1f2937;
       border-radius: 12px;
       overflow: hidden;
       transition: 0.3s;
     }
 
-    .project-card:hover { transform: translateY(-6px); }
+    .project-card:hover {
+      transform: translateY(-6px);
+    }
 
-    .project-card img { width: 100%; height: 150px; object-fit: cover; }
+    .project-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
 
-    .project-content { padding: 15px; }
+    .project-content {
+      padding: 15px;
+    }
 
-    footer { text-align: center; padding: 40px; opacity: 0.5; }
+    .project-content p {
+      opacity: 0.75;
+    }
 
-    .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s; }
-    .reveal.active { opacity: 1; transform: translateY(0); }
+    footer {
+      text-align: center;
+      padding: 40px;
+      opacity: 0.5;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.8s;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
@@ -124,10 +180,6 @@
       deep learning, and data analysis through academic projects and internships.
       I enjoy working with real-world datasets, building predictive models, and
       developing intelligent applications using Python and modern ML frameworks.
-      
-      My interests include computer vision, predictive modeling, and data-driven
-      web applications. I am continuously improving my skills by building projects
-      and exploring new technologies in artificial intelligence and analytics.
     </p>
   </div>
 </section>
@@ -139,7 +191,6 @@
       <strong>Data Science Certification — Datamites</strong>
       <p>Python, Statistics, Machine Learning, SQL, Data Analysis</p>
     </div>
-
     <div class="timeline-item">
       <strong>Bachelor's Degree</strong>
       <p>Computer Science / Related Field</p>
@@ -161,27 +212,10 @@
   <div class="skills-bar">SQL
     <div class="bar"><div class="progress" data-width="80%"></div></div>
   </div>
-
-  <div class="skills-bar">Deep Learning
-    <div class="bar"><div class="progress" data-width="75%"></div></div>
-  </div>
-
-  <div class="skills-bar">Data Analysis
-    <div class="bar"><div class="progress" data-width="85%"></div></div>
-  </div>
-
-  <div class="skills-bar">Flask
-    <div class="bar"><div class="progress" data-width="70%"></div></div>
-  </div>
 </section>
 
 <section id="projects" class="reveal">
   <h2>Projects</h2>
-  <p>
-    Selected machine learning and data science projects demonstrating
-    experience in predictive modeling, computer vision, and analytics.
-  </p>
-
   <div id="repo-container" class="projects-grid"></div>
 </section>
 
@@ -218,7 +252,7 @@
         <img src="https://picsum.photos/400/200?random=${Math.random()}">
         <div class="project-content">
           <h3>${repo.name}</h3>
-          <p>${repo.description || 'Data science and machine learning project implementation'}</p>
+          <p>${repo.description || 'Data science project'}</p>
           <a href="${repo.html_url}" target="_blank">View Project</a>
         </div>`;
 
